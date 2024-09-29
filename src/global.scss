@@ -11,6 +11,45 @@
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
+$light-theme: (
+  'background-t': #141c2f,
+  'text-primary': #ffffff,
+  'text-secondary': #c8c9ce,
+  'text-disabled': #8891a0,
+  'text-third': #0668d7,
+  'primary': #1f2a48,
+  'secondary': #141c2f,
+  'button': #0079fe,
+);
+
+// Modo oscuro
+$dark-theme: (
+  'background-t': #141c2f,
+  'text-primary': #ffffff,
+  'text-secondary': #c8c9ce,
+  'text-disabled': #8891a0,
+  'text-third': #0668d7,
+  'primary': #1f2a48,
+  'secondary': #141c2f,
+  'button': #0079fe,
+);
+
+// Función para crear las variables CSS
+@mixin theme-variables($theme-map) {
+  @each $name, $color in $theme-map {
+    --#{$name}: #{$color};
+  }
+}
+
+:root {
+  @include theme-variables($light-theme);
+}
+
+// Definimos las variables para el tema oscuro usando la clase .dark-mode
+.dark-mode {
+  @include theme-variables($dark-theme);
+}
+
 /* Remove default margin */
 body,
 h1,
@@ -41,6 +80,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background: var(--background-t);
   font-family: 'Roboto', sans-serif;
 }
 
