@@ -1,9 +1,9 @@
 .ContainerInputStyle {
   background-color: var(--primary);
   display: flex;
-  max-width: 45em;
+  width: 100%;
   padding: 0.5em;
-  margin: 1em;
+
   border-radius: 1rem;
   align-items: center;
   flex-direction: row;
@@ -15,16 +15,31 @@
     font-size: 1.2rem;
     width: 100%;
     color: var(--text-primary);
+
     &::placeholder {
       font-weight: 400;
       color: var(--text-secondary);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &::-webkit-autofill,
+    &::-webkit-autofill:hover,
+    &::-webkit-autofill:focus,
+    &::-webkit-autofill:active {
+      box-shadow: 0 0 0px 1000px white inset !important;
+      -webkit-text-fill-color: #000;
     }
   }
   .IconSearch {
     margin-top: 0.5rem;
     color: var(--text-third);
     font-size: 2rem;
-    padding-inline: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 0.6rem;
     pointer-events: none;
     cursor: pointer;
   }
@@ -33,6 +48,7 @@
     color: #fff;
     justify-self: end;
     border: none;
+    cursor: pointer;
     padding: 0.8em;
     font-weight: bold;
     font-size: 1rem;

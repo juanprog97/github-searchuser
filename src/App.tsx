@@ -1,15 +1,16 @@
 import { DarkModeProvider } from '@/context';
-import { ButtonDarkMode, InputSearch } from '@/components';
+import { MessageConsole } from '@/utils';
+import FinderDev from './layout/FinderDev';
+import './App.scss';
 
 function App() {
-  const handleSubmit = (value: string) => {
-    console.log(value);
-  };
+  MessageConsole();
   return (
     <>
       <DarkModeProvider>
-        <InputSearch onSubmit={handleSubmit} />
-        <ButtonDarkMode />
+        <section className="container-app">
+          <FinderDev />
+        </section>
       </DarkModeProvider>
     </>
   );

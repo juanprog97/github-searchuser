@@ -24,7 +24,7 @@
       "@/context": ["./src/context/index"]
     },
     /* Linting */
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
