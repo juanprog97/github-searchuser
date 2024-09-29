@@ -64,13 +64,16 @@
       padding: 1em;
       display: flex;
       @include mobile {
+        gap: 1.5em;
         flex-wrap: wrap;
       }
       flex-direction: row;
       justify-content: space-between;
+
       .ItemNumberDetail {
         display: flex;
         flex-direction: column;
+
         text-align: center;
         h3 {
           color: var(--text-secondary);
