@@ -91,9 +91,21 @@ html:focus-within {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
+  padding-inline: 2em;
   line-height: 1.5;
   background: var(--background-t);
   font-family: 'Roboto', sans-serif;
+}
+
+footer {
+  text-align: center;
+  h3 {
+    color: var(--text-primary);
+  }
+  a {
+    text-decoration: none;
+    color: var(--text-secondary);
+  }
 }
 
 /* A elements that don't have a class get default styles */

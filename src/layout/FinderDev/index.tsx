@@ -16,15 +16,33 @@ const FinderDev = () => {
 
   const ListDataSearch = useCallback(() => {
     if (error) {
-      return <p>Error!</p>;
+      return (
+        <div className={styles.NotifyData}>
+          <p>Error!</p>;
+        </div>
+      );
     }
     if (isLoading) {
-      return <Spinner />;
+      return (
+        <div className={styles.NotifyData}>
+          <Spinner />
+        </div>
+      );
     } else {
       if (users.length == 0) {
-        return <p style={{ color: 'var(--text-primary)' }}>Not Result...</p>;
+        return (
+          <div className={styles.NotifyData}>
+            <p style={{ color: 'var(--text-primary)', textAlign: 'center' }}>Not Result...</p>;
+          </div>
+        );
       }
-      return users.map((user: UserSearch, index: number) => <CardInfoDetails key={uuid() + index} data={user} />);
+      return (
+        <div className={styles.ListContainerData}>
+          {users.map((user: UserSearch, index: number) => (
+            <CardInfoDetails key={uuid() + index} data={user} />
+          ))}
+        </div>
+      );
     }
   }, [isValidating, error, isLoading]);
 
@@ -35,7 +53,7 @@ const FinderDev = () => {
         <ButtonDarkMode />
       </div>
       <InputSearch onSubmit={handleSearchInput} />
-      <div className={styles.ListContainerData}>{ListDataSearch()}</div>
+      {ListDataSearch()}
     </div>
   );
 };
