@@ -1,5 +1,5 @@
 import { DarkModeProvider } from '@/context';
-import { InputSearch } from '@/components';
+import { ButtonDarkMode, InputSearch } from '@/components';
 
 function App() {
   const handleSubmit = (value: string) => {
@@ -9,6 +9,7 @@ function App() {
     <>
       <DarkModeProvider>
         <InputSearch onSubmit={handleSubmit} />
+        <ButtonDarkMode />
       </DarkModeProvider>
     </>
   );

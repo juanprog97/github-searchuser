@@ -1,0 +1,19 @@
+.StyleButtonContainer {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  label {
+    color: var(--text-primary);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+  span {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+  }
+}

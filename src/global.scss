@@ -12,17 +12,16 @@
 }
 
 $light-theme: (
-  'background-t': #141c2f,
-  'text-primary': #ffffff,
-  'text-secondary': #c8c9ce,
+  'background-t': #fff,
+  'text-primary': #000000,
+  'text-secondary': #a2a2a5,
   'text-disabled': #8891a0,
   'text-third': #0668d7,
-  'primary': #1f2a48,
-  'secondary': #141c2f,
+  'primary': #efefef,
+  'secondary': #fff,
   'button': #0079fe,
 );
 
-// Modo oscuro
 $dark-theme: (
   'background-t': #141c2f,
   'text-primary': #ffffff,
@@ -34,7 +33,6 @@ $dark-theme: (
   'button': #0079fe,
 );
 
-// Función para crear las variables CSS
 @mixin theme-variables($theme-map) {
   @each $name, $color in $theme-map {
     --#{$name}: #{$color};
@@ -45,8 +43,7 @@ $dark-theme: (
   @include theme-variables($light-theme);
 }
 
-// Definimos las variables para el tema oscuro usando la clase .dark-mode
-.dark-mode {
+.dark {
   @include theme-variables($dark-theme);
 }
 
