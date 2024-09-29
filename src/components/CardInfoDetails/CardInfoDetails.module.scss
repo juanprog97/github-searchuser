@@ -1,13 +1,21 @@
+@import '../../assets/mixins';
+
 .CardContainer {
   background-color: var(--primary);
-  min-width: 45em;
+
   width: 100%;
   display: flex;
   flex-direction: row;
   padding: 1em;
   gap: 1.5em;
   border-radius: 1rem;
+  height: fit-content;
 
+  @include mobile {
+    flex-wrap: wrap;
+    display: flex;
+    height: fit-content;
+  }
   .ProfileImage {
     border-radius: 100%;
     $size: 12rem;
@@ -18,12 +26,18 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    @include mobile {
+      justify-content: center;
+    }
     .RowNameandDateJoined {
       display: flex;
       width: 100%;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      @include mobile {
+        flex-wrap: wrap;
+      }
       h2 {
         color: var(--text-primary);
       }
@@ -49,6 +63,9 @@
       border-radius: 1rem;
       padding: 1em;
       display: flex;
+      @include mobile {
+        flex-wrap: wrap;
+      }
       flex-direction: row;
       justify-content: space-between;
       .ItemNumberDetail {

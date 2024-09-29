@@ -1,3 +1,5 @@
+@import '../../assets/mixins';
+
 .ContainerDev {
   display: flex;
   width: 100%;
@@ -29,6 +31,10 @@
   display: grid;
   width: 100%;
   gap: 2em;
-  grid-template-rows: 22em;
-  grid-template-columns: repeat(auto-fill, minmax(50em, 1fr));
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(45em, 1fr));
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
 }

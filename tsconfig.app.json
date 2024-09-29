@@ -20,7 +20,7 @@
       "@/model": ["./src/model/index"],
       "@/services": ["./src/services/index"],
       "@/utils": ["./src/utils/index"],
-      "@/assets": ["./src/assets/index"],
+      "@/assets/*": ["./src/assets/*"],
       "@/context": ["./src/context/index"]
     },
     /* Linting */
