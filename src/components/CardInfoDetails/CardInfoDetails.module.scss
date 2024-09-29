@@ -1,6 +1,7 @@
 .CardContainer {
   background-color: var(--primary);
-  max-width: 45em;
+  min-width: 45em;
+  width: 100%;
   display: flex;
   flex-direction: row;
   padding: 1em;
@@ -9,7 +10,7 @@
 
   .ProfileImage {
     border-radius: 100%;
-    $size: 15rem;
+    $size: 12rem;
     max-width: $size;
     max-height: $size;
   }
@@ -21,6 +22,7 @@
       display: flex;
       width: 100%;
       flex-direction: row;
+      align-items: center;
       justify-content: space-between;
       h2 {
         color: var(--text-primary);
@@ -29,12 +31,18 @@
         color: var(--text-secondary);
       }
     }
-
+    .LinkUsername {
+      text-decoration: none;
+    }
     .UsernameInfo {
       color: var(--text-third);
     }
     .BioInfo {
       color: var(--text-secondary);
+      padding-top: 0.8em;
+      padding-bottom: 1em;
+      word-break: break-all;
+      white-space: normal;
     }
     .InfoDetailsNumbers {
       background-color: var(--secondary);
@@ -46,7 +54,7 @@
       .ItemNumberDetail {
         display: flex;
         flex-direction: column;
-
+        text-align: center;
         h3 {
           color: var(--text-secondary);
         }
@@ -56,5 +64,55 @@
         }
       }
     }
+    .SocialAditionalInfo {
+      display: grid;
+      margin-top: 1em;
+      gap: 1em;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      .ItemSocial {
+        display: flex;
+        flex-direction: row;
+        span {
+          color: var(--text-primary);
+          padding-right: 0.5em;
+          font-size: 1.8em;
+        }
+        h3 {
+          color: var(--text-secondary);
+          word-break: break-all;
+          white-space: normal;
+        }
+        a {
+          text-decoration: none;
+          padding-right: 0.5em;
+          font-size: 1.2em;
+          color: var(--text-secondary);
+          word-break: break-all;
+          white-space: normal;
+        }
+      }
+    }
+  }
+}
+
+.InfoButtonDetail {
+  background-color: var(--button);
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin: auto;
+  color: white;
+  margin: auto;
+
+  width: fit-content;
+  border-radius: 0.5rem;
+  padding: 0.5em;
+  cursor: pointer;
+  span {
+    font-size: 2rem;
+    margin-left: 0.4rem;
+    color: white;
   }
 }

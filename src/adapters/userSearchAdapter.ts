@@ -8,6 +8,7 @@ export const userSearchAdapter = (data: any): UserSearch[] => {
     return {
       username: item.login,
       imgProfile: item.avatar_url,
+      htmlprofile: item.html_url,
     };
   });
   return listUserSearch;

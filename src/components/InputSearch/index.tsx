@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, FormEventHandler, useRef, useState } from 'react';
+import {  FormEvent, useRef } from 'react';
 import styles from './InputSearch.module.scss';
 
 type InputSearchProps = {
@@ -12,14 +12,11 @@ const InputSearch = ({
   label = 'Search',
   onSubmit = () => {},
 }: InputSearchProps): JSX.Element => {
-  const [inputValue, setInputValue] = useState<string>('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
   const handleClick = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!!onSubmit) onSubmit(inputValue);
+    if (!!onSubmit && !!inputRef.current) onSubmit(inputRef.current.value);
   };
 
   return (
@@ -29,8 +26,8 @@ const InputSearch = ({
       </label>
       <input
         type="text"
+        ref={inputRef}
         id="input-text-search"
-        onChange={handleInputChange}
         className={styles.InputStyle}
         placeholder={placeholder}
       />

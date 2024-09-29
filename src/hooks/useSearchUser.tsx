@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { BASE_URL } from '../utils/const';
+import { BASE_URL_SEARCH } from '../utils/const';
 import { fetchUserSearch } from '@/services';
 import { userSearchAdapter } from '@/adapters';
 import { useEffect } from 'react';
@@ -9,10 +9,15 @@ const useSearchUser = (userSearch: string | null) => {
     const response = await fetchUserSearch(url, userSearch == null ? '' : userSearch).call;
     return response.data;
   };
-  const { data, error, isLoading, isValidating, mutate } = useSWR(userSearch ? BASE_URL : null, fetcher);
+  const { data, error, isLoading, isValidating, mutate } = useSWR(userSearch ? BASE_URL_SEARCH : null, fetcher, {
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false,
+  });
 
   useEffect(() => {
-    mutate();
+    if (userSearch) {
+      mutate();
+    }
   }, [userSearch]);
   const dataResponse = userSearchAdapter(data);
   return {
