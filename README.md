@@ -1,50 +1,62 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# GitHub Finds Devs
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a minimal GitHub user search application built with React, TypeScript, and Vite. It allows users to search for GitHub profiles and view detailed information about them by using the [GitHub API](https://api.github.com).
 
-## Expanding the ESLint configuration
+### Live Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+You can view the live version of the project here: [GitHub Search User](https://juanprog97.github.io/github-searchuser/)
 
-- Configure the top-level `parserOptions` property like this:
+### Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Fast performance**: Built with Vite, offering a fast development environment and optimized production build.
+- **GitHub User Search**: Search for GitHub users by username and retrieve detailed information such as repositories, followers, and more.
+- **Responsive design**: Works well on both desktop and mobile devices.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Technologies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **React**: The core library for building the user interface.
+- **TypeScript**: For static typing and better code reliability.
+- **Vite**: A fast frontend build tool that offers hot module replacement (HMR) for an enhanced development experience.
+- **GitHub API**: The app interacts with the [GitHub API](https://api.github.com) to fetch user data.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Setup Instructions
+
+To get started with this project locally:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/juanprog97/github-searchuser.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd github-searchuser
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   The app will be running at `http://localhost:3000/`.
+
+
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+This version introduces the project clearly and provides necessary instructions while also mentioning the use of the GitHub API.
